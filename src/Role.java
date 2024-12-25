@@ -1,11 +1,13 @@
 public class Role {
-    String Administrateur;
-    String Employer;
-    String Client;
+    String role;
 
-    public Role(String Administrateur, String Employer, String Client) {
-        this.Administrateur = Administrateur;
-        this.Employer = Employer;
-        this.Client =Client;
+    public String getRole() {
+        return role;
+    }
+
+
+    public Role(String role) {
+        this.role = role;
+
     }
 }
