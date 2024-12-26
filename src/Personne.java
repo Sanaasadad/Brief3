@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 public class Personne {
     String id;
@@ -12,6 +12,9 @@ public Personne(String id, String Nom, String prenom,int Age){
     this.prenom = prenom;
     this.Age = Age;
 
+}
+public String getId(){
+    return id;
 }
 
 }

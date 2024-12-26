@@ -31,6 +31,8 @@ public class Main {
         for(Utilisateur information : Comptes){
                     System.out.println(information);
         }
+
+
     }
 
     public static void main(String[] args) {
