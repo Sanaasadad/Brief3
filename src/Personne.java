@@ -1,9 +1,12 @@
 
 
 public class Personne {
+    public String getId() {
+        return id;
+    }
+
     String id;
-    String Nom;
-    String prenom;
+    String Nom, prenom;
     int Age;
 
 public Personne(String id, String Nom, String prenom,int Age){
@@ -13,8 +16,7 @@ public Personne(String id, String Nom, String prenom,int Age){
     this.Age = Age;
 
 }
-public String getId(){
-    return id;
-}
+
+
 
 }

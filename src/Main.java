@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static ArrayList<Utilisateur> Comptes = new ArrayList<>();
-    static Scanner scanner = new Scanner(System.in);
+     ArrayList<Utilisateur> Comptes = new ArrayList<>();
+     Scanner scanner = new Scanner(System.in);
 
-    public static void Ajouter() {
+     void Ajouter() {
         System.out.println("entrer id");
         String id = scanner.nextLine();
 
@@ -27,40 +27,57 @@ public class Main {
         Comptes.add(new Utilisateur(id, Nom, prenom, Age, email, motdepasse,role));
 
     }
-    public static void Afficher(){
+     void Afficher(){
         for(Utilisateur information : Comptes){
                     System.out.println(information);
         }
-
+        }
+    void Rechercher(){
+        System.out.println("Entrer id de tache qui veux rechercher");
+        String id = scanner.nextLine();
+        for(Utilisateur u : Comptes){
+            if(u.getId().equals(id)){
+                System.out.println(u);
+            }
+return;
+        }
+        System.out.println("id invalide");
 
     }
 
+
     public static void main(String[] args) {
+         Main programme = new Main();
+
         int choix;
         do {
             System.out.println("Menu");
             System.out.println("1-Ajouter");
-            System.out.println("2-Rechercher");
+            System.out.println("2-Afficher");
             System.out.println("3-Modifier");
             System.out.println("4-Supprimer");
-            System.out.println("5-Afficher");
+            System.out.println("5-Rechercher");
+            System.out.println("6-Quitter");
             System.out.println("choisissez une choix");
-            choix = scanner.nextInt();
-            scanner.nextLine();
+            choix = programme.scanner.nextInt();
+            programme.scanner.nextLine();
 
             switch (choix) {
                 case 1:
-                    Ajouter();
+                    programme.Ajouter();
                     break;
                 case 2:
-                    Afficher();
+                   programme.Afficher();
                     break;
                 case 3:
+                    programme.Rechercher();
+                    break;
+                case 4:
                     System.out.println("au revoir!!");
                 default:
                     System.out.println("choix invalide");
             }
 
-        } while (choix != 3);
+        } while (choix != 4);
     }
 }
