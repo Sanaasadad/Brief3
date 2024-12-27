@@ -3,6 +3,30 @@ public class Utilisateur extends Personne {
     Role role;
     String email;
 
+    public String getMotdepasse() {
+        return Motdepasse;
+    }
+
+    public void setMotdepasse(String motdepasse) {
+        Motdepasse = motdepasse;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public Utilisateur(String id, String Nom, String prenom, int Age, String email, String motdepasse, Role role) {
         super(id, Nom, prenom, Age);
         this.email = email;
