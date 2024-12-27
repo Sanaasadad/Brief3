@@ -82,6 +82,7 @@ void supprimer(){
     for(int i = 0;i< Comptes.size();i++){
         if(Comptes.get(i).getId().equals(id)){
             Comptes.remove(Comptes.get(i));
+            System.out.println("la tache est supprimer!!");
             return;
         }
     }
