@@ -26,67 +26,83 @@ public class Main {
         Role role = new Role(sa);
         Comptes.add(new Utilisateur(id, Nom, prenom, Age, email, motdepasse,role));
     }
-    Role role = new Role(sa);
+
      void Afficher(){
         for(Utilisateur information : Comptes){
                     System.out.println(information);
         }
         }
     void Rechercher(){
-        System.out.println("Entrer id de tache qui veux rechercher");
+        System.out.println("Entrer id qui veux rechercher");
         String id = scanner.nextLine();
+        boolean trouve = false;
         for(Utilisateur u : Comptes){
             if(u.getId().equals(id)){
                 System.out.println(u);
+                trouve = true;
             }
-return;
+
         }
-        System.out.println("id invalide");
+        if(!trouve) {
+            System.out.println("id invalide");
+        }
 
     }
 void Modifier(){
-    System.out.println(" Entrer id de tache qui veux modifier");
+    System.out.println(" Entrer id qui veux modifier");
     String id = scanner.nextLine();
-    for(int i = 0;i<Comptes.size();i++){
-        if(Comptes.get(i).getId().equals(id)){
+    boolean trouve = false;
+    for (Utilisateur compte : Comptes) {
+        if (compte.getId().equals(id)) {
 
             System.out.println("Entrer le nouveau Nom");
-            Comptes.get(i).setNom(scanner.nextLine());
-
+            compte.setNom(scanner.nextLine());
+            System.out.println(" le Nom est modifier");
 
             System.out.println("Entrer le nouveau Prenom");
-            Comptes.get(i).setPrenom(scanner.nextLine());
+            compte.setPrenom(scanner.nextLine());
+            System.out.println(" le Prenom est modifier");
 
 
             System.out.println("Entrer le nouveau Age");
-            Comptes.get(i).setAge(scanner.nextInt());
+            compte.setAge(scanner.nextInt());
+            System.out.println(" l'age est modifier");
             scanner.nextLine();
 
             System.out.println("Entrer le nouveau email");
-            Comptes.get(i).setEmail(scanner.nextLine());
+            compte.setEmail(scanner.nextLine());
+            System.out.println(" l'email est modifier");
 
 
             System.out.println("Entrer le nouveau mot de passe");
-            Comptes.get(i).setMotdepasse(scanner.nextLine());
+            compte.setMotdepasse(scanner.nextLine());
+            System.out.println(" le mot de passe est modifier");
 
 
             System.out.println("Entrer le nouveau Role ");
-            Comptes.get(i).role.setRole(scanner.nextLine());
+            compte.role.setRole(scanner.nextLine());
+            System.out.println(" le Role est modifier");
+            trouve = true;
 
         }
+    }if (!trouve) {
+        System.out.println(" id est invalide!!");
     }
 }
 void supprimer(){
-    System.out.println("entrer id de tache qui veux supprimer");
+    System.out.println("entrer id qui veux supprimer");
     String id = scanner.nextLine();
+    boolean trouve = false;
     for(int i = 0;i< Comptes.size();i++){
         if(Comptes.get(i).getId().equals(id)){
             Comptes.remove(Comptes.get(i));
-            System.out.println("la tache est supprimer!!");
-            return;
+            System.out.println("le compte est supprimer!!");
+            trouve = true;
         }
+    }if (!trouve) {
+        System.out.println("aucun compte trouve!!");
     }
-    System.out.println("aucun livre trouve!!");
+
 }
 
     public static void main(String[] args) {
